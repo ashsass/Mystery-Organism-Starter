@@ -14,10 +14,27 @@ const mockUpStrand = () => {
 };
 
 //Creates a factory function to make multiple objects. 
-const pAequorFactory = (specimenNum, arr) => {
+const pAequorFactory = (specimenNum, dnaArray) => {
   return {
     specimenNum,
-    arr
+    dnaArray,
+    mutate () {
+      console.log('Printing the DNA Array');
+      console.log(dnaArray);
+      let randIndex = dnaArray[Math.floor(Math.random() * 15)];
+      let newVal = returnRandBase();
+      console.log('Initial printing of randIndex and newVal');
+      console.log(randIndex);
+      console.log(newVal);
+      while(randIndex === newVal){
+        newVal = returnRandBase();
+        console.log('In the while loop');
+        console.log(randIndex);
+        console.log(newVal);
+      }
+
+      dnaArray[]
+    }
   }
 };
 
