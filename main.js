@@ -51,6 +51,18 @@ const pAequorFactory = (specimenNum, dna) => {
   }
 };
 
+const pAequorArray = [];
+let specimenNumCounter = 1;
+
+while(pAequorArray.length < 30){
+  let newpAequor = pAequorFactory(specimenNumCounter, mockUpStrand());
+  if(newpAequor.willLikelySurvive()){
+    pAequorArray.push(newpAequor);
+  }
+  specimenNumCounter++;
+}
+
+console.log(pAequorArray);
  
 
 
