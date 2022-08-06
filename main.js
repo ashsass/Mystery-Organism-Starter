@@ -14,23 +14,42 @@ const mockUpStrand = () => {
 };
 
 //Creates a factory function to make multiple objects. 
-const pAequorFactory = (specimenNum, dnaArray) => {
+const pAequorFactory = (specimenNum, dna) => {
   return {
     specimenNum,
-    dnaArray,
+    dna,
     mutate () {
       let randNumber = Math.floor(Math.random() * 15); //Creates a random number so we can access the index later
-      let randIndex = dnaArray[randNumber]; //Grabs the value at said index
+      let randIndex = dna[randNumber]; //Grabs the value at said index
       let newVal = returnRandBase(); //Creates a new value from the function created above
 
       while(randIndex === newVal){
         newVal = returnRandBase();
       }; //Loops to find a new value if newVal matches the current value
       
-      dnaArray[randNumber] = newVal; //Accesses the index to replace the current value with the new value
+      dna[randNumber] = newVal; //Accesses the index to replace the current value with the new value
+
+      return dna;
+    },
+    compareDNA (obj) {
+      let counter = 0;
+      console.log(`1 DNA: ${this.dna}`);
+      console.log(`2 DNA: ${obj.dna}`);
+       for(let i = 0; i<this.dna.length; i++){
+          if(this.dna[i] === obj.dna[i]){
+            counter++;
+          }
+       }
+      console.log(`Counter after loop: ${counter}`);
+       let dnaPercent = (counter/15) * 100;
+       
+       console.log(`Specimen ${this.specimenNum} and Specimen ${obj.specimenNum} have ${dnaPercent}% DNA in common.`)
     }
   }
 };
+
+ 
+
 
 
 
