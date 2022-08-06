@@ -13,12 +13,14 @@ const mockUpStrand = () => {
   return newStrand;
 };
 
+//Creates a factory function to make multiple objects. 
 const pAequorFactory = (specimenNum, arr) => {
   return {
     specimenNum,
     arr
   }
 };
+
 
 
 
