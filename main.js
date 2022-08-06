@@ -19,21 +19,15 @@ const pAequorFactory = (specimenNum, dnaArray) => {
     specimenNum,
     dnaArray,
     mutate () {
-      console.log('Printing the DNA Array');
-      console.log(dnaArray);
-      let randIndex = dnaArray[Math.floor(Math.random() * 15)];
-      let newVal = returnRandBase();
-      console.log('Initial printing of randIndex and newVal');
-      console.log(randIndex);
-      console.log(newVal);
+      let randNumber = Math.floor(Math.random() * 15); //Creates a random number so we can access the index later
+      let randIndex = dnaArray[randNumber]; //Grabs the value at said index
+      let newVal = returnRandBase(); //Creates a new value from the function created above
+
       while(randIndex === newVal){
         newVal = returnRandBase();
-        console.log('In the while loop');
-        console.log(randIndex);
-        console.log(newVal);
-      }
-
-      dnaArray[]
+      }; //Loops to find a new value if newVal matches the current value
+      
+      dnaArray[randNumber] = newVal; //Accesses the index to replace the current value with the new value
     }
   }
 };
