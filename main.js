@@ -33,14 +33,13 @@ const pAequorFactory = (specimenNum, dna) => {
     },
     compareDNA (obj) {
       let counter = 0;
-      console.log(`1 DNA: ${this.dna}`);
-      console.log(`2 DNA: ${obj.dna}`);
+
        for(let i = 0; i<this.dna.length; i++){
           if(this.dna[i] === obj.dna[i]){
-            counter++;
-          }
+          counter++;
+        }//Check to see if either object has a value in common. If so increase the counter
        }
-      console.log(`Counter after loop: ${counter}`);
+
        let dnaPercent = (counter/15) * 100;
        
        console.log(`Specimen ${this.specimenNum} and Specimen ${obj.specimenNum} have ${dnaPercent}% DNA in common.`)
