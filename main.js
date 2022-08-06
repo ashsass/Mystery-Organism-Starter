@@ -43,6 +43,17 @@ const pAequorFactory = (specimenNum, dna) => {
        let dnaPercent = (counter/15) * 100;
        
        console.log(`Specimen ${this.specimenNum} and Specimen ${obj.specimenNum} have ${dnaPercent}% DNA in common.`)
+    },
+    willLikelySurvive() {
+      let counter = 0;
+      for(let i = 0; i<this.dna.length; i++){
+        if(this.dna[i] === 'C' || this.dna[i] === 'G'){
+          counter++;
+        }
+      }
+      let survivalPercent = (counter/15) * 100;
+
+      survivalPercent > 60 ? true : false;
     }
   }
 };
